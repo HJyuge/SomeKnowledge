@@ -1,0 +1,18 @@
+//
+//  SKPrefixHeader.pch
+//  SomeKnowledge
+//
+//  Created by HuangJin on 2018/6/13.
+//  Copyright © 2018年 HuangJin. All rights reserved.
+//
+
+#ifndef SKPrefixHeader_pch
+#define SKPrefixHeader_pch
+
+#import "UIView+Ext.h"
+
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+
+
+#endif /* SKPrefixHeader_pch */
