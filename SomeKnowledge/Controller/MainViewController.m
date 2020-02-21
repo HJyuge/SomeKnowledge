@@ -36,6 +36,8 @@ static NSString *cellIdentifier = @"cellIdentifier";
                      @"StringViewController",
                      @"LocateNotifiyAndSyncCalendarEventViewController",
                      @"NaviToPushViewController",
+                     @"RuntimeViewController",
+                     @"TimerViewController",
                      ] mutableCopy];
     _titleDataSource = [@[
                           @"日历",
@@ -44,9 +46,14 @@ static NSString *cellIdentifier = @"cellIdentifier";
                           @"字符串",
                           @"本地推送和日历同步",
                           @"跳转到别的TabbarItem",
+                          @"Runtime",
+                          @"定时器",
                           ] mutableCopy];
     
 //    [self.tableView registerClass:[MainListCell class] forCellReuseIdentifier:cellIdentifier];
+    
+    __weak NSString *test = @"test";
+    NSLog(@"===%@",test);
 }
 
 

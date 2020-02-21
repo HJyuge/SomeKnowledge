@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B39DBDB23408FF3002EAD9B /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B39DBDA23408FF3002EAD9B /* RuntimeViewController.m */; };
+		1B39DBE2234090A2002EAD9B /* RuntimeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B39DBE1234090A2002EAD9B /* RuntimeTest.m */; };
+		1B39DBE62341DEF8002EAD9B /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B39DBE42341DEF8002EAD9B /* TimerViewController.m */; };
+		1B39DBE72341DEF8002EAD9B /* TimerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B39DBE52341DEF8002EAD9B /* TimerViewController.xib */; };
 		1B6F5AED20D8E95E00239185 /* TestItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6F5AEC20D8E95E00239185 /* TestItemViewController.m */; };
 		1B6F5AF020D8EA7D00239185 /* NaviToPushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6F5AEF20D8EA7D00239185 /* NaviToPushViewController.m */; };
 		1B6F5AF320D8F12B00239185 /* TestItemFirshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B6F5AF220D8F12B00239185 /* TestItemFirshViewController.m */; };
@@ -69,6 +73,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B39DBD923408FF3002EAD9B /* RuntimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeViewController.h; sourceTree = "<group>"; };
+		1B39DBDA23408FF3002EAD9B /* RuntimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeViewController.m; sourceTree = "<group>"; };
+		1B39DBE0234090A2002EAD9B /* RuntimeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeTest.h; sourceTree = "<group>"; };
+		1B39DBE1234090A2002EAD9B /* RuntimeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeTest.m; sourceTree = "<group>"; };
+		1B39DBE32341DEF8002EAD9B /* TimerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
+		1B39DBE42341DEF8002EAD9B /* TimerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
+		1B39DBE52341DEF8002EAD9B /* TimerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimerViewController.xib; sourceTree = "<group>"; };
 		1B6F5AEB20D8E95E00239185 /* TestItemViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestItemViewController.h; sourceTree = "<group>"; };
 		1B6F5AEC20D8E95E00239185 /* TestItemViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestItemViewController.m; sourceTree = "<group>"; };
 		1B6F5AEE20D8EA7D00239185 /* NaviToPushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NaviToPushViewController.h; sourceTree = "<group>"; };
@@ -181,6 +192,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B39DBDF234090A2002EAD9B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1B39DBE0234090A2002EAD9B /* RuntimeTest.h */,
+				1B39DBE1234090A2002EAD9B /* RuntimeTest.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1B895C0620D0B2C8005897ED = {
 			isa = PBXGroup;
 			children = (
@@ -208,8 +228,8 @@
 				1B895CB820D0BF9E005897ED /* Main */,
 				1B895C6220D0B6D5005897ED /* 3rd */,
 				1B895C5720D0B6D5005897ED /* Controller */,
-				1B895C5620D0B6D5005897ED /* Model */,
 				1B895C6320D0B6D5005897ED /* View */,
+				1B39DBDF234090A2002EAD9B /* Model */,
 				1B895CBB20D0C030005897ED /* Supporting Files */,
 			);
 			path = SomeKnowledge;
@@ -231,13 +251,6 @@
 				1B895C3820D0B2CB005897ED /* Info.plist */,
 			);
 			path = SomeKnowledgeUITests;
-			sourceTree = "<group>";
-		};
-		1B895C5620D0B6D5005897ED /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		1B895C5720D0B6D5005897ED /* Controller */ = {
@@ -263,6 +276,11 @@
 				1B6F5AF220D8F12B00239185 /* TestItemFirshViewController.m */,
 				1B895CB320D0BE03005897ED /* BaseViewController.h */,
 				1B895CB420D0BE03005897ED /* BaseViewController.m */,
+				1B39DBD923408FF3002EAD9B /* RuntimeViewController.h */,
+				1B39DBDA23408FF3002EAD9B /* RuntimeViewController.m */,
+				1B39DBE32341DEF8002EAD9B /* TimerViewController.h */,
+				1B39DBE42341DEF8002EAD9B /* TimerViewController.m */,
+				1B39DBE52341DEF8002EAD9B /* TimerViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -488,6 +506,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B39DBE72341DEF8002EAD9B /* TimerViewController.xib in Resources */,
 				1B895CA920D0B7E5005897ED /* ECLTimeCell.xib in Resources */,
 				1B895C9A20D0B6F8005897ED /* Info.plist in Resources */,
 				1B895CC620D0C050005897ED /* Assets.xcassets in Resources */,
@@ -518,6 +537,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B895CB520D0BE03005897ED /* BaseViewController.m in Sources */,
+				1B39DBDB23408FF3002EAD9B /* RuntimeViewController.m in Sources */,
 				1B895CCD20D0C621005897ED /* UIView+Ext.m in Sources */,
 				1B895CAA20D0B7E5005897ED /* ECLExtendCalendar.m in Sources */,
 				1B6F5AF020D8EA7D00239185 /* NaviToPushViewController.m in Sources */,
@@ -526,6 +546,7 @@
 				1B895C9120D0B6F8005897ED /* FSCalendarCollectionViewLayout.m in Sources */,
 				1B895C9020D0B6F8005897ED /* FSCalendar.m in Sources */,
 				1B895CB220D0BDDF005897ED /* LocateNotifiyAndSyncCalendarEventViewController.m in Sources */,
+				1B39DBE62341DEF8002EAD9B /* TimerViewController.m in Sources */,
 				1B895C6820D0B6D5005897ED /* KeyBoradInputViewViewController.m in Sources */,
 				1B895C9720D0B6F8005897ED /* FSCalendarCalculator.m in Sources */,
 				1B895CA820D0B7E5005897ED /* ECLStandardCalendar.m in Sources */,
@@ -549,6 +570,7 @@
 				1B895C8E20D0B6F8005897ED /* FSCalendarCell.m in Sources */,
 				1B895CAC20D0B7E5005897ED /* ECLTimeCell.m in Sources */,
 				1B895C6520D0B6D5005897ED /* MainViewController.m in Sources */,
+				1B39DBE2234090A2002EAD9B /* RuntimeTest.m in Sources */,
 				1B895C8F20D0B6F8005897ED /* FSCalendarStickyHeader.m in Sources */,
 				1B895C9920D0B6F8005897ED /* FSCalendarTransitionCoordinator.m in Sources */,
 				1B895C8B20D0B6F8005897ED /* FSCalendarCollectionView.m in Sources */,
