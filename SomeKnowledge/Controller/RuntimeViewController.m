@@ -28,12 +28,35 @@
 //    [self testClassIsaMetaClass];
 //    [self testMessageForwarding];
 //    [self testClassAndInstanceProperty];
-    [self testCreateClassAndInstance];
-
+//    [self testCreateClassAndInstance];
+    [self testPerformSelector];
 }
 
 - (void)dealloc {
-    objc_disposeClassPair(NSClassFromString(@"Women"));
+    if (NSClassFromString(@"Women")){
+        objc_disposeClassPair(NSClassFromString(@"Women"));
+    }
+}
+
+- (void)testPerformSelector{
+    Student  *stu = [Student new];
+    //子线程中没有执行。performSelector内部的创建的timer是添加到当前线程的runloop中。runloop还没创建。
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //必须放后面。
+        [[NSRunLoop currentRunLoop] run];
+        [stu performSelector:@selector(doHomeWork) withObject:nil afterDelay:1];
+        [Student cancelPreviousPerformRequestsWithTarget:self selector:@selector(doHomeWork) object:nil];
+        NSLog(@"current runloop:%@",[NSRunLoop currentRunLoop]);
+    });
+    
+    
+    //没生效
+//    [stu performSelector:@selector(doHomeWork) withObject:nil afterDelay:2];
+//    NSLog(@"current thread:%@",[NSThread currentThread]);
+//    [Student cancelPreviousPerformRequestsWithTarget:self selector:@selector(doHomeWork) object:nil];
+    
+    
+    
 }
 
 - (void)testCreateClassAndInstance{

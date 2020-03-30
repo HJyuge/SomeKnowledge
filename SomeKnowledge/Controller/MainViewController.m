@@ -52,8 +52,8 @@ static NSString *cellIdentifier = @"cellIdentifier";
     
 //    [self.tableView registerClass:[MainListCell class] forCellReuseIdentifier:cellIdentifier];
     
-    __weak NSString *test = @"test";
-    NSLog(@"===%@",test);
+//    __weak NSString *test = @"test";
+//    NSLog(@"===%@",test);
 }
 
 

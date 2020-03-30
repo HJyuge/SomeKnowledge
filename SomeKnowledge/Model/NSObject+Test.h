@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSObject (Test)
 
 - (void)speak;
+- (id)performSelector:(SEL)selector withObjects:(NSArray *)objects;
 @end
 
 NS_ASSUME_NONNULL_END
