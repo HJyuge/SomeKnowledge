@@ -8,7 +8,6 @@
 
 #import "RuntimeTest.h"
 #import <objc/runtime.h>
-
 static const char *key = "name";
 
 @implementation RuntimeTest

@@ -53,6 +53,10 @@
 		1B895CC920D0C050005897ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B895CC320D0C050005897ED /* Main.storyboard */; };
 		1B895CCD20D0C621005897ED /* UIView+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B895CCC20D0C621005897ED /* UIView+Ext.m */; };
 		1B895CD020D0E5F3005897ED /* WaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B895CCF20D0E5F3005897ED /* WaveView.m */; };
+		1BDA3899242E01F900BB9E34 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA3898242E01F900BB9E34 /* Person.m */; };
+		1BDA389C242E020D00BB9E34 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA389B242E020D00BB9E34 /* Student.m */; };
+		1BDA389F242F3C9700BB9E34 /* Person+Addtion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA389E242F3C9700BB9E34 /* Person+Addtion.m */; };
+		1BDA38A2242F726300BB9E34 /* NSObject+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA38A1242F726300BB9E34 /* NSObject+Test.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +169,14 @@
 		1B895CCC20D0C621005897ED /* UIView+Ext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Ext.m"; sourceTree = "<group>"; };
 		1B895CCE20D0E5F3005897ED /* WaveView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaveView.h; sourceTree = "<group>"; };
 		1B895CCF20D0E5F3005897ED /* WaveView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaveView.m; sourceTree = "<group>"; };
+		1BDA3897242E01F900BB9E34 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		1BDA3898242E01F900BB9E34 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		1BDA389A242E020D00BB9E34 /* Student.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		1BDA389B242E020D00BB9E34 /* Student.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		1BDA389D242F3C9700BB9E34 /* Person+Addtion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+Addtion.h"; sourceTree = "<group>"; };
+		1BDA389E242F3C9700BB9E34 /* Person+Addtion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+Addtion.m"; sourceTree = "<group>"; };
+		1BDA38A0242F726300BB9E34 /* NSObject+Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Test.h"; sourceTree = "<group>"; };
+		1BDA38A1242F726300BB9E34 /* NSObject+Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Test.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +209,14 @@
 			children = (
 				1B39DBE0234090A2002EAD9B /* RuntimeTest.h */,
 				1B39DBE1234090A2002EAD9B /* RuntimeTest.m */,
+				1BDA3897242E01F900BB9E34 /* Person.h */,
+				1BDA3898242E01F900BB9E34 /* Person.m */,
+				1BDA38A0242F726300BB9E34 /* NSObject+Test.h */,
+				1BDA38A1242F726300BB9E34 /* NSObject+Test.m */,
+				1BDA389D242F3C9700BB9E34 /* Person+Addtion.h */,
+				1BDA389E242F3C9700BB9E34 /* Person+Addtion.m */,
+				1BDA389A242E020D00BB9E34 /* Student.h */,
+				1BDA389B242E020D00BB9E34 /* Student.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -545,9 +565,11 @@
 				1B895C9220D0B6F8005897ED /* FSCalendarScopeHandle.m in Sources */,
 				1B895C9120D0B6F8005897ED /* FSCalendarCollectionViewLayout.m in Sources */,
 				1B895C9020D0B6F8005897ED /* FSCalendar.m in Sources */,
+				1BDA3899242E01F900BB9E34 /* Person.m in Sources */,
 				1B895CB220D0BDDF005897ED /* LocateNotifiyAndSyncCalendarEventViewController.m in Sources */,
 				1B39DBE62341DEF8002EAD9B /* TimerViewController.m in Sources */,
 				1B895C6820D0B6D5005897ED /* KeyBoradInputViewViewController.m in Sources */,
+				1BDA38A2242F726300BB9E34 /* NSObject+Test.m in Sources */,
 				1B895C9720D0B6F8005897ED /* FSCalendarCalculator.m in Sources */,
 				1B895CA820D0B7E5005897ED /* ECLStandardCalendar.m in Sources */,
 				1B895CC720D0C050005897ED /* main.m in Sources */,
@@ -556,12 +578,14 @@
 				1B895CAF20D0B967005897ED /* MainListCell.m in Sources */,
 				1B895C8D20D0B6F8005897ED /* FSCalendarDelegationFactory.m in Sources */,
 				1B895C9B20D0B6F8005897ED /* FSCalendarAppearance.m in Sources */,
+				1BDA389F242F3C9700BB9E34 /* Person+Addtion.m in Sources */,
 				1B6F5AF320D8F12B00239185 /* TestItemFirshViewController.m in Sources */,
 				1B895C9620D0B6F8005897ED /* FSCalendarConstants.m in Sources */,
 				1B895C9520D0B6F8005897ED /* FSCalendar+Deprecated.m in Sources */,
 				1B895C1420D0B2C8005897ED /* AppDelegate.m in Sources */,
 				1B895CD020D0E5F3005897ED /* WaveView.m in Sources */,
 				1B895C6620D0B6D5005897ED /* WaveViewController.m in Sources */,
+				1BDA389C242E020D00BB9E34 /* Student.m in Sources */,
 				1B895C6720D0B6D5005897ED /* CalendarViewController.m in Sources */,
 				1B895C9320D0B6F8005897ED /* FSCalendarWeekdayView.m in Sources */,
 				1B895C9420D0B6F8005897ED /* FSCalendarExtensions.m in Sources */,
