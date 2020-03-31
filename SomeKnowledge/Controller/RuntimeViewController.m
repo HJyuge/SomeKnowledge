@@ -7,13 +7,24 @@
 //
 
 #import "RuntimeViewController.h"
-#import <objc/runtime.h>
 #import "RuntimeTest.h"
 #import "Student.h"
 #import "Person.h"
 #import "Person+Addtion.h"
 #import "NSObject+Test.h"
+#import <objc/message.h>
+#import <objc/runtime.h>
 
+// https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtPropertyIntrospection.html#//apple_ref/doc/uid/TP40008048-CH101-SW5         runtime
+
+// http://www.starming.com/2015/04/01/objc-runtime/         runtime
+
+//https://www.jianshu.com/p/d260d18dd551        runloop
+// https://blog.ibireme.com/2015/05/18/runloop/         runloop
+
+
+static void *kDTActionHandlerTapGestureKey = &kDTActionHandlerTapGestureKey;
+static void *kDTActionHandlerTapBlockKey = &kDTActionHandlerTapBlockKey;
 @interface RuntimeViewController (){
  
 }
@@ -29,7 +40,13 @@
 //    [self testMessageForwarding];
 //    [self testClassAndInstanceProperty];
 //    [self testCreateClassAndInstance];
-    [self testPerformSelector];
+//    [self testPerformSelector];
+//    [self testInstanceOperation];
+//    [self testVariableAndProperty];
+//    [self testAssociatedObject:^{
+//        NSLog(@"Associate tap gesture success.And User Tap callback.");
+//    }];
+    [self testDicToModel];
 }
 
 - (void)dealloc {
@@ -38,25 +55,154 @@
     }
 }
 
+- (void)testDicToModel {
+    Student  *stu = [Student new];
+    NSDictionary *stuDic = @{
+        @"kname":@"张三",
+        @"age":@15,
+        @"grade":@9,
+        @"address":@"天界仙人区蓬莱岛清风洞",
+        @"hobby":@"睡觉",
+        @"scores":@{
+                @"chinese":@85,
+                @"math":@95,
+                @"english":@96,
+                @"physics":@93,
+                @"chemistry":@100
+        },
+        @"friends":@[
+                @{@"nickname":@"小丽"},
+                @{@"nickname":@"小航"},
+                @{@"nickname":@"小于"},
+                @{@"nickname":@"小结"},
+        ]
+    };
+    [stu toModelWithDic:stuDic];
+    NSLog(@"student kname:%@,age:%ld,grade:%ld,address:%@,hobby:%@",stu.kname,(long)stu.age,(long)stu.grade,stu.address,stu.hobby);
+    NSLog(@"student scores:%@,friends:%@",stu.scores,stu.friends);
+}
+
+- (void)testAssociatedObject:(void(^)(void))block {
+    UITapGestureRecognizer *gesture = objc_getAssociatedObject(self, kDTActionHandlerTapGestureKey);
+    if (!gesture){
+        gesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(__handleActionForTapGesture:)];
+        [self.view addGestureRecognizer:gesture];
+        objc_setAssociatedObject(self, kDTActionHandlerTapGestureKey, gesture, OBJC_ASSOCIATION_RETAIN);
+    }
+    objc_setAssociatedObject(self, kDTActionHandlerTapBlockKey, block, OBJC_ASSOCIATION_COPY);
+}
+
+//手势识别对象的target和action
+- (void)__handleActionForTapGesture:(UITapGestureRecognizer *)gesture {
+    if (gesture.state == UIGestureRecognizerStateRecognized) {
+        void(^action)(void) = objc_getAssociatedObject(self, kDTActionHandlerTapBlockKey);
+        if (action){
+            action();
+        }
+    }
+}
+
+- (void)testVariableAndProperty {
+    //获取属性列表
+    id StudentClass = objc_getClass("Student");
+    unsigned int outCount, i;;
+    objc_property_t *properties = class_copyPropertyList(StudentClass, &outCount);
+    //查找属性名称
+    /*  const char *property_getName(objc_property_t property); */
+    
+    //通过给出的名称来在类和协议中获取属性的引用
+    /* objc_property_t class_getProperty(Class cls, const char *name);
+    objc_property_t protocol_getProperty(Protocol *proto, const char *name, BOOL isRequiredProperty, BOOL isInstanceProperty); */
+    
+    //发掘属性名称和@encode类型字符串
+    /*  const char *property_getAttributes(objc_property_t property); */
+    
+    //从一个类中获取它的属性
+    properties = class_copyPropertyList(StudentClass, &outCount);
+    for (i = 0; i < outCount; i++) {
+         objc_property_t property = properties[i];
+         fprintf(stdout, "%s %s\n", property_getName(property), property_getAttributes(property));
+    }
+}
+
+- (void)testInstanceOperation {
+    //MRR 下运行
+//    NSObject *obj = [[NSObject alloc] init];
+//    id newObjc = object_copy(obj, class_getInstanceSize(Student.class));
+//    object_setClass(newObjc, Student.class);
+//    object_dispose(obj);
+    
+//    int numClasses;
+//    Class * classes = NULL;
+//    numClasses = objc_getClassList(NULL, 0);
+//    if (numClasses > 0) {
+//         classes = malloc(sizeof(Class) * numClasses);
+//         numClasses = objc_getClassList(classes, numClasses);
+//         NSLog(@"number of classes: %d", numClasses);
+//         for (int i = 0; i < numClasses; i++) {
+//              Class cls = classes[i];
+//              NSLog(@"class name: %s", class_getName(cls));
+//         }
+//         free(classes);
+//    }
+    
+    unsigned int numberOfIvars = 0;
+    Ivar *ivars = class_copyIvarList([Student class], &numberOfIvars);
+    for (int i = 0; i < numberOfIvars; i++) {
+        Ivar ivar = ivars[i];
+        NSLog(@"ivar address = %p",ivar);
+//        NSLog(@"=====Student ivar:%s and offset:%td",ivar_getName(ivar),ivar_getOffset(ivar));
+    }
+    /*
+     =====Student ivar:_kname and offset:24     0x1025e34b0
+     =====Student ivar:_age and offset:32       0x1025e34d0
+     =====Student ivar:_grade and offset:40     0x1025e34f0
+     =====Student ivar:_address and offset:48   0x1025e3510
+     =====Student ivar:_hobby and offset:56     0x1025e3530
+     =====Student ivar:_scores and offset:64    0x1025e3550
+     =====Student ivar:_friends and offset:72   0x1025e3570
+     */
+    
+    for (Ivar *p = ivars; p< ivars + numberOfIvars; p++) {
+        Ivar ivar = *p;
+        NSLog(@"ivar address = %p",ivar);
+//        ptrdiff_t offset = ivar_getOffset(ivar);
+//        const char *name = ivar_getName(ivar);
+//        NSLog(@"*****Student ivar name = %s, offset = %td", name, offset);
+    }
+    /*
+    *****Student ivar name = _kname, offset = 24
+    *****Student ivar name = _age, offset = 32
+    *****Student ivar name = _grade, offset = 40
+    *****Student ivar name = _address, offset = 48
+    *****Student ivar name = _hobby, offset = 56
+    *****Student ivar name = _scores, offset = 64
+    *****Student ivar name = _friends, offset = 72
+    */
+}
+
 - (void)testPerformSelector{
+    
+    // testPerformSelector
     Student  *stu = [Student new];
     //子线程中没有执行。performSelector内部的创建的timer是添加到当前线程的runloop中。runloop还没创建。
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        //必须放后面。
-        [[NSRunLoop currentRunLoop] run];
         [stu performSelector:@selector(doHomeWork) withObject:nil afterDelay:1];
-        [Student cancelPreviousPerformRequestsWithTarget:self selector:@selector(doHomeWork) object:nil];
-        NSLog(@"current runloop:%@",[NSRunLoop currentRunLoop]);
+        //必须放后面。启动runloop需要事件或定时器
+        [[NSRunLoop currentRunLoop] run];
     });
     
+//    [stu performSelector:@selector(doHomeWork) onThread:[NSThread currentThread] withObject:nil waitUntilDone:YES];
     
-    //没生效
+    //取消待执行的方法
 //    [stu performSelector:@selector(doHomeWork) withObject:nil afterDelay:2];
-//    NSLog(@"current thread:%@",[NSThread currentThread]);
-//    [Student cancelPreviousPerformRequestsWithTarget:self selector:@selector(doHomeWork) object:nil];
+//    [Student cancelPreviousPerformRequestsWithTarget:stu selector:@selector(doHomeWork) object:nil];
     
+    //NSInvocation
+    [stu performSelector:@selector(wantToPlay:sing:eat:drink:) withObjects:@[@"basketball",@"SpeakNow",@"chicken",@"juice"]];
     
-    
+    //objc_msgSend
+    ((void(*)(id,SEL,NSString *,NSString *,NSString *,NSString *))objc_msgSend)(stu,@selector(wantToPlay:sing:eat:drink:),@"basketball",@"SpeakNow",@"chicken",@"juice");
 }
 
 - (void)testCreateClassAndInstance{
@@ -109,6 +255,16 @@
     NSLog(@"women hair:%@",[instance performSelector:@selector(hair)]);
     [instance performSelector:@selector(setHair:) withObject:@"red"];
     NSLog(@"women hair:%@",[instance performSelector:@selector(hair)]);
+    
+    //创建对象
+    //可以看出class_createInstance和alloc的不同
+    id theObject = class_createInstance(NSString.class, sizeof(unsigned));
+    id str1 = [theObject init];
+    NSLog(@"%@", [str1 class]);
+    id str2 = [[NSString alloc] initWithString:@"test"];
+    NSLog(@"%@", [str2 class]);
+    
+    
 }
 
 void imp_setHair(id self,SEL _cmd, NSString * newHair) {

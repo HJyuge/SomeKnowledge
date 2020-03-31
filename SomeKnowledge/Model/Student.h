@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, SubjectType) {
 
 - (void)run;
 - (void)doHomeWork;
-
+- (void)wantToPlay:(NSString *)ball sing:(NSString *)song eat:(NSString *)food drink:(NSString *)drink;
 -(Student *)toModelWithDic:(NSDictionary *)dic;
 @end
 

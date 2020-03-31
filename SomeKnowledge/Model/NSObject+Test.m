@@ -8,6 +8,7 @@
 
 #import "NSObject+Test.h"
 
+//https://www.jianshu.com/p/da010a008741
 @implementation NSObject (Test)
 - (void)speak {
     NSLog(@"NSObject+Test,speaknow.");
@@ -16,9 +17,14 @@
 - (id)performSelector:(SEL)selector withObjects:(NSArray *)objects {
 //    NSMethodSignature *signature = [[self class] instanceMethodSignatureForSelector:selector];
     NSMethodSignature *signature = [self methodSignatureForSelector:selector];
+    if (signature == nil) {
+           return nil;
+    }
+     //使用NSInvocation进行参数的封装
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
     invocation.target = self;
     invocation.selector = selector;
+    //减去 self _cmd
     NSInteger paramsCount = signature.numberOfArguments - 2;
     paramsCount = MIN(paramsCount, objects.count);
     for (int i = 0; i < paramsCount; i++) {
