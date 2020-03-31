@@ -31,6 +31,7 @@
 }
 
 //============动态方法解析 1=============
+//可以动态的提供一个方法的实现
 //+ (BOOL)resolveInstanceMethod:(SEL)sel {
 //    if (sel == @selector(name)){
 ////        IMP imp = class_getMethodImplementation([self class], @selector(personName));
@@ -50,6 +51,7 @@ NSString * dynamicName(id self,SEL _cmd){
     return @"My name is xxxx";
 }
 //============动态方法解析 2=============
+//重定向接收者   替换消息接收者的机会
 + (BOOL)resolveInstanceMethod:(SEL)sel{
     return NO;
 }

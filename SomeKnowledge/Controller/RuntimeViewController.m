@@ -31,6 +31,11 @@ static void *kDTActionHandlerTapBlockKey = &kDTActionHandlerTapBlockKey;
 @end
 
 @implementation RuntimeViewController
+- (void)dealloc {
+    if (NSClassFromString(@"Women")){
+        objc_disposeClassPair(NSClassFromString(@"Women"));
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,13 +51,14 @@ static void *kDTActionHandlerTapBlockKey = &kDTActionHandlerTapBlockKey;
 //    [self testAssociatedObject:^{
 //        NSLog(@"Associate tap gesture success.And User Tap callback.");
 //    }];
-    [self testDicToModel];
+//    [self testDicToModel];
+    [self testMethodSwizzling];
 }
 
-- (void)dealloc {
-    if (NSClassFromString(@"Women")){
-        objc_disposeClassPair(NSClassFromString(@"Women"));
-    }
+- (void)testMethodSwizzling {
+    Person *per = [Person new];
+    [per sleep];
+    [per run];
 }
 
 - (void)testDicToModel {
