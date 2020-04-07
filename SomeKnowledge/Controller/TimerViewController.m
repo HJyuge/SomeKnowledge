@@ -7,17 +7,22 @@
 //
 
 #import "TimerViewController.h"
+#import "HJProxy.h"
 
 @interface TimerViewController ()
 @property (strong, nonatomic)  UILabel *count;
 @property (strong, nonatomic)  UIButton *start;
 @property (strong, nonatomic) NSTimer *timer;
+@property (strong, nonatomic) CADisplayLink *displayLink;
 @end
 
 @implementation TimerViewController
 - (void)dealloc {
+    [_displayLink invalidate];
+    _displayLink = nil;
     [_timer invalidate];
     _timer = nil;
+    NSLog(@"TimerViewController dealloc");
 }
 
 - (void)viewDidLoad {
@@ -38,7 +43,47 @@
     [_start setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
     [_start addTarget:self action:@selector(fire:) forControlEvents:UIControlEventTouchUpInside];
     
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(startAnimation) userInfo:nil repeats:YES];
+//    [self setTimer];
+    [self setCADisplayLink];
+//    [self];
+}
+
+- (void)group{
+ 
+}
+
+- (void)setCADisplayLink {
+    //循环引用
+//    _displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(startAnimation)];
+    _displayLink = [CADisplayLink displayLinkWithTarget:[HJProxy proxyWithTarget:self] selector:@selector(startAnimation)];
+    if (@available(iOS 10.0, *)) {
+        _displayLink.preferredFramesPerSecond = 1;// 默认频率1秒60次，这里设置1秒一次
+    } else {
+        _displayLink.frameInterval = 1;
+    }
+    [_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    _displayLink.paused = YES;
+    
+}
+
+- (void)setTimer{
+    
+    __weak typeof(self) weakSelf = self;
+    if (@available(iOS 10.0, *)) {
+        //        _timer = [NSTimer timerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        //            [weakSelf startAnimation];
+        //        }];
+        //        [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSDefaultRunLoopMode];
+
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+            [weakSelf startAnimation];
+        }];
+    } else {
+        //有循环引用
+//        _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(startAnimation) userInfo:nil repeats:YES];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:[HJProxy proxyWithTarget:self] selector:@selector(startAnimation) userInfo:nil repeats:YES];
+    }
+    
     _timer.fireDate = [NSDate distantFuture];
 }
 
@@ -46,9 +91,10 @@
     sender.selected = !sender.selected;
     if (sender.selected){
         _timer.fireDate = [NSDate date];
+        _displayLink.paused = NO;
     }else {
         _timer.fireDate = [NSDate distantFuture];
-        
+        _displayLink.paused = YES;
     }
 }
 

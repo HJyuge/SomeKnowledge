@@ -57,6 +57,20 @@
 		1BDA389C242E020D00BB9E34 /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA389B242E020D00BB9E34 /* Student.m */; };
 		1BDA389F242F3C9700BB9E34 /* Person+Addtion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA389E242F3C9700BB9E34 /* Person+Addtion.m */; };
 		1BDA38A2242F726300BB9E34 /* NSObject+Test.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA38A1242F726300BB9E34 /* NSObject+Test.m */; };
+		1BDA390B2435D70600BB9E34 /* Worker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA390A2435D70600BB9E34 /* Worker.m */; };
+		1BDA390E2435D72200BB9E34 /* Teacher.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA390D2435D72200BB9E34 /* Teacher.m */; };
+		1BDA3911243C507300BB9E34 /* HJProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA3910243C507200BB9E34 /* HJProxy.m */; };
+		1BDA3914243C57B000BB9E34 /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA3913243C57B000BB9E34 /* GCDViewController.m */; };
+		1BDA3917243C57BD00BB9E34 /* NSOperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA3916243C57BD00BB9E34 /* NSOperationViewController.m */; };
+		1BDA391A243C582300BB9E34 /* NSThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA3919243C582300BB9E34 /* NSThreadViewController.m */; };
+		1BDA3928243C627500BB9E34 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA391D243C627500BB9E34 /* FMDatabaseQueue.m */; };
+		1BDA3929243C627500BB9E34 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA3920243C627500BB9E34 /* FMDatabaseAdditions.m */; };
+		1BDA392A243C627500BB9E34 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA3921243C627500BB9E34 /* FMDatabase.m */; };
+		1BDA392B243C627500BB9E34 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA3925243C627500BB9E34 /* FMDatabasePool.m */; };
+		1BDA392C243C627500BB9E34 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA3926243C627500BB9E34 /* FMResultSet.m */; };
+		1BDA392D243C627500BB9E34 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1BDA3927243C627500BB9E34 /* Info.plist */; };
+		1BDA3931243C62C500BB9E34 /* YTKKeyValueStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA392F243C62C500BB9E34 /* YTKKeyValueStore.m */; };
+		1BDA3934243C62D900BB9E34 /* FMDBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDA3933243C62D900BB9E34 /* FMDBViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,6 +191,34 @@
 		1BDA389E242F3C9700BB9E34 /* Person+Addtion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+Addtion.m"; sourceTree = "<group>"; };
 		1BDA38A0242F726300BB9E34 /* NSObject+Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Test.h"; sourceTree = "<group>"; };
 		1BDA38A1242F726300BB9E34 /* NSObject+Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Test.m"; sourceTree = "<group>"; };
+		1BDA39092435D70500BB9E34 /* Worker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Worker.h; sourceTree = "<group>"; };
+		1BDA390A2435D70600BB9E34 /* Worker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Worker.m; sourceTree = "<group>"; };
+		1BDA390C2435D72200BB9E34 /* Teacher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Teacher.h; sourceTree = "<group>"; };
+		1BDA390D2435D72200BB9E34 /* Teacher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Teacher.m; sourceTree = "<group>"; };
+		1BDA390F243C507200BB9E34 /* HJProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HJProxy.h; sourceTree = "<group>"; };
+		1BDA3910243C507200BB9E34 /* HJProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HJProxy.m; sourceTree = "<group>"; };
+		1BDA3912243C57B000BB9E34 /* GCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
+		1BDA3913243C57B000BB9E34 /* GCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
+		1BDA3915243C57BD00BB9E34 /* NSOperationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSOperationViewController.h; sourceTree = "<group>"; };
+		1BDA3916243C57BD00BB9E34 /* NSOperationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSOperationViewController.m; sourceTree = "<group>"; };
+		1BDA3918243C582300BB9E34 /* NSThreadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSThreadViewController.h; sourceTree = "<group>"; };
+		1BDA3919243C582300BB9E34 /* NSThreadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSThreadViewController.m; sourceTree = "<group>"; };
+		1BDA391C243C627500BB9E34 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		1BDA391D243C627500BB9E34 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		1BDA391E243C627500BB9E34 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		1BDA391F243C627500BB9E34 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		1BDA3920243C627500BB9E34 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		1BDA3921243C627500BB9E34 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		1BDA3922243C627500BB9E34 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		1BDA3923243C627500BB9E34 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		1BDA3924243C627500BB9E34 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		1BDA3925243C627500BB9E34 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		1BDA3926243C627500BB9E34 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		1BDA3927243C627500BB9E34 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BDA392F243C62C500BB9E34 /* YTKKeyValueStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTKKeyValueStore.m; sourceTree = "<group>"; };
+		1BDA3930243C62C500BB9E34 /* YTKKeyValueStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTKKeyValueStore.h; sourceTree = "<group>"; };
+		1BDA3932243C62D900BB9E34 /* FMDBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMDBViewController.h; sourceTree = "<group>"; };
+		1BDA3933243C62D900BB9E34 /* FMDBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMDBViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,12 +253,18 @@
 				1B39DBE1234090A2002EAD9B /* RuntimeTest.m */,
 				1BDA3897242E01F900BB9E34 /* Person.h */,
 				1BDA3898242E01F900BB9E34 /* Person.m */,
+				1BDA39092435D70500BB9E34 /* Worker.h */,
+				1BDA390A2435D70600BB9E34 /* Worker.m */,
+				1BDA390C2435D72200BB9E34 /* Teacher.h */,
+				1BDA390D2435D72200BB9E34 /* Teacher.m */,
 				1BDA38A0242F726300BB9E34 /* NSObject+Test.h */,
 				1BDA38A1242F726300BB9E34 /* NSObject+Test.m */,
 				1BDA389D242F3C9700BB9E34 /* Person+Addtion.h */,
 				1BDA389E242F3C9700BB9E34 /* Person+Addtion.m */,
 				1BDA389A242E020D00BB9E34 /* Student.h */,
 				1BDA389B242E020D00BB9E34 /* Student.m */,
+				1BDA390F243C507200BB9E34 /* HJProxy.h */,
+				1BDA3910243C507200BB9E34 /* HJProxy.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -301,6 +349,14 @@
 				1B39DBE32341DEF8002EAD9B /* TimerViewController.h */,
 				1B39DBE42341DEF8002EAD9B /* TimerViewController.m */,
 				1B39DBE52341DEF8002EAD9B /* TimerViewController.xib */,
+				1BDA3912243C57B000BB9E34 /* GCDViewController.h */,
+				1BDA3913243C57B000BB9E34 /* GCDViewController.m */,
+				1BDA3915243C57BD00BB9E34 /* NSOperationViewController.h */,
+				1BDA3916243C57BD00BB9E34 /* NSOperationViewController.m */,
+				1BDA3918243C582300BB9E34 /* NSThreadViewController.h */,
+				1BDA3919243C582300BB9E34 /* NSThreadViewController.m */,
+				1BDA3932243C62D900BB9E34 /* FMDBViewController.h */,
+				1BDA3933243C62D900BB9E34 /* FMDBViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -308,6 +364,8 @@
 		1B895C6220D0B6D5005897ED /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				1BDA392E243C62C500BB9E34 /* YTKKeyValueStore */,
+				1BDA391B243C627500BB9E34 /* fmdb */,
 				1B895C6920D0B6F8005897ED /* FSCalendar */,
 			);
 			path = 3rd;
@@ -423,6 +481,34 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		1BDA391B243C627500BB9E34 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				1BDA391C243C627500BB9E34 /* FMDatabase.h */,
+				1BDA391D243C627500BB9E34 /* FMDatabaseQueue.m */,
+				1BDA391E243C627500BB9E34 /* FMResultSet.h */,
+				1BDA391F243C627500BB9E34 /* FMDatabasePool.h */,
+				1BDA3920243C627500BB9E34 /* FMDatabaseAdditions.m */,
+				1BDA3921243C627500BB9E34 /* FMDatabase.m */,
+				1BDA3922243C627500BB9E34 /* FMDatabaseQueue.h */,
+				1BDA3923243C627500BB9E34 /* FMDB.h */,
+				1BDA3924243C627500BB9E34 /* FMDatabaseAdditions.h */,
+				1BDA3925243C627500BB9E34 /* FMDatabasePool.m */,
+				1BDA3926243C627500BB9E34 /* FMResultSet.m */,
+				1BDA3927243C627500BB9E34 /* Info.plist */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		1BDA392E243C62C500BB9E34 /* YTKKeyValueStore */ = {
+			isa = PBXGroup;
+			children = (
+				1BDA392F243C62C500BB9E34 /* YTKKeyValueStore.m */,
+				1BDA3930243C62C500BB9E34 /* YTKKeyValueStore.h */,
+			);
+			path = YTKKeyValueStore;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -485,7 +571,7 @@
 		1B895C0720D0B2C8005897ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = HuangJin;
 				TargetAttributes = {
 					1B895C0E20D0B2C8005897ED = {
@@ -532,6 +618,7 @@
 				1B895CC620D0C050005897ED /* Assets.xcassets in Resources */,
 				1B895CC920D0C050005897ED /* Main.storyboard in Resources */,
 				1B895CC820D0C050005897ED /* LaunchScreen.storyboard in Resources */,
+				1BDA392D243C627500BB9E34 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,20 +646,28 @@
 				1B895CB520D0BE03005897ED /* BaseViewController.m in Sources */,
 				1B39DBDB23408FF3002EAD9B /* RuntimeViewController.m in Sources */,
 				1B895CCD20D0C621005897ED /* UIView+Ext.m in Sources */,
+				1BDA3928243C627500BB9E34 /* FMDatabaseQueue.m in Sources */,
 				1B895CAA20D0B7E5005897ED /* ECLExtendCalendar.m in Sources */,
+				1BDA390E2435D72200BB9E34 /* Teacher.m in Sources */,
 				1B6F5AF020D8EA7D00239185 /* NaviToPushViewController.m in Sources */,
 				1B895C6420D0B6D5005897ED /* StringViewController.m in Sources */,
 				1B895C9220D0B6F8005897ED /* FSCalendarScopeHandle.m in Sources */,
 				1B895C9120D0B6F8005897ED /* FSCalendarCollectionViewLayout.m in Sources */,
+				1BDA3931243C62C500BB9E34 /* YTKKeyValueStore.m in Sources */,
 				1B895C9020D0B6F8005897ED /* FSCalendar.m in Sources */,
+				1BDA3934243C62D900BB9E34 /* FMDBViewController.m in Sources */,
 				1BDA3899242E01F900BB9E34 /* Person.m in Sources */,
+				1BDA392C243C627500BB9E34 /* FMResultSet.m in Sources */,
 				1B895CB220D0BDDF005897ED /* LocateNotifiyAndSyncCalendarEventViewController.m in Sources */,
 				1B39DBE62341DEF8002EAD9B /* TimerViewController.m in Sources */,
 				1B895C6820D0B6D5005897ED /* KeyBoradInputViewViewController.m in Sources */,
 				1BDA38A2242F726300BB9E34 /* NSObject+Test.m in Sources */,
 				1B895C9720D0B6F8005897ED /* FSCalendarCalculator.m in Sources */,
+				1BDA390B2435D70600BB9E34 /* Worker.m in Sources */,
 				1B895CA820D0B7E5005897ED /* ECLStandardCalendar.m in Sources */,
 				1B895CC720D0C050005897ED /* main.m in Sources */,
+				1BDA3914243C57B000BB9E34 /* GCDViewController.m in Sources */,
+				1BDA392A243C627500BB9E34 /* FMDatabase.m in Sources */,
 				1B6F5AED20D8E95E00239185 /* TestItemViewController.m in Sources */,
 				1B895C9820D0B6F8005897ED /* FSCalendarHeaderView.m in Sources */,
 				1B895CAF20D0B967005897ED /* MainListCell.m in Sources */,
@@ -581,19 +676,24 @@
 				1BDA389F242F3C9700BB9E34 /* Person+Addtion.m in Sources */,
 				1B6F5AF320D8F12B00239185 /* TestItemFirshViewController.m in Sources */,
 				1B895C9620D0B6F8005897ED /* FSCalendarConstants.m in Sources */,
+				1BDA3929243C627500BB9E34 /* FMDatabaseAdditions.m in Sources */,
 				1B895C9520D0B6F8005897ED /* FSCalendar+Deprecated.m in Sources */,
 				1B895C1420D0B2C8005897ED /* AppDelegate.m in Sources */,
 				1B895CD020D0E5F3005897ED /* WaveView.m in Sources */,
 				1B895C6620D0B6D5005897ED /* WaveViewController.m in Sources */,
 				1BDA389C242E020D00BB9E34 /* Student.m in Sources */,
 				1B895C6720D0B6D5005897ED /* CalendarViewController.m in Sources */,
+				1BDA3911243C507300BB9E34 /* HJProxy.m in Sources */,
 				1B895C9320D0B6F8005897ED /* FSCalendarWeekdayView.m in Sources */,
 				1B895C9420D0B6F8005897ED /* FSCalendarExtensions.m in Sources */,
 				1B895CAB20D0B7E5005897ED /* ECLTimePickView.m in Sources */,
+				1BDA392B243C627500BB9E34 /* FMDatabasePool.m in Sources */,
 				1B895C8C20D0B6F8005897ED /* FSCalendarDelegationProxy.m in Sources */,
+				1BDA3917243C57BD00BB9E34 /* NSOperationViewController.m in Sources */,
 				1B895C8E20D0B6F8005897ED /* FSCalendarCell.m in Sources */,
 				1B895CAC20D0B7E5005897ED /* ECLTimeCell.m in Sources */,
 				1B895C6520D0B6D5005897ED /* MainViewController.m in Sources */,
+				1BDA391A243C582300BB9E34 /* NSThreadViewController.m in Sources */,
 				1B39DBE2234090A2002EAD9B /* RuntimeTest.m in Sources */,
 				1B895C8F20D0B6F8005897ED /* FSCalendarStickyHeader.m in Sources */,
 				1B895C9920D0B6F8005897ED /* FSCalendarTransitionCoordinator.m in Sources */,

@@ -15,12 +15,11 @@
 
 
 @implementation Person
+
 @dynamic name;
 + (void)identifier{
     NSLog(@"Identifier is Person.");
 }
-
-
 
 - (void)run {
     NSLog(@"Person can is running");
@@ -68,8 +67,10 @@ NSString * dynamicName(id self,SEL _cmd){
 }
 
 -(void)forwardInvocation:(NSInvocation *)anInvocation {
-    if ([[Student new] respondsToSelector:@selector(name)]){
-        return [anInvocation invokeWithTarget:[Student  new]];
+//    NSLog(@"anInvocation:%@",anInvocation);
+    Student *student = [Student new];
+    if ([student respondsToSelector:@selector(name)]){
+        return [anInvocation invokeWithTarget:student];
     }
     return [super forwardInvocation:anInvocation];
 }
@@ -77,10 +78,15 @@ NSString * dynamicName(id self,SEL _cmd){
 -(NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
     NSMethodSignature *signature = [super methodSignatureForSelector:aSelector];
     if (!signature){
-        signature = [[Student new] methodSignatureForSelector:aSelector];
+//        signature = [[Student new] methodSignatureForSelector:aSelector];
+        signature = [Student instanceMethodSignatureForSelector:aSelector];
     }
+    NSLog(@"signature:%@",signature);
     return signature;
 }
 
+- (void)eatMeat:(NSString *)type{
+    NSLog(@"%@ eat %@",[self class],type);
+}
 
 @end

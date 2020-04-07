@@ -14,6 +14,8 @@
 #import "NSObject+Test.h"
 #import <objc/message.h>
 #import <objc/runtime.h>
+#import "Worker.h"
+#import "Teacher.h"
 
 // https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtPropertyIntrospection.html#//apple_ref/doc/uid/TP40008048-CH101-SW5         runtime
 
@@ -52,7 +54,16 @@ static void *kDTActionHandlerTapBlockKey = &kDTActionHandlerTapBlockKey;
 //        NSLog(@"Associate tap gesture success.And User Tap callback.");
 //    }];
 //    [self testDicToModel];
-    [self testMethodSwizzling];
+//    [self testMethodSwizzling];
+    
+    [self testMethodSwizzling2];
+}
+
+- (void)testMethodSwizzling2 {
+    Teacher *teacher = [Teacher new];
+    [teacher eatMeat:@"cow"];
+    Worker *worker = [Worker new];
+    [worker eatMeat:@"pig"];
 }
 
 - (void)testMethodSwizzling {
@@ -213,9 +224,11 @@ static void *kDTActionHandlerTapBlockKey = &kDTActionHandlerTapBlockKey;
 
 - (void)testCreateClassAndInstance{
     Class perClass = [Person class];
-    //创建一个新类和元类
+    //创建一个women新类和元类
     Class womenCls = objc_allocateClassPair(perClass, "Women", 0);
+    //添加一个childrens变量
     class_addIvar(womenCls, "children", sizeof(NSInteger), log(sizeof(NSInteger)), "l");
+    //添加一个hair属性
     objc_property_attribute_t type = {"T", "@\"NSString\""};//变量类型
     objc_property_attribute_t ownership = { "C", "" };// C = copy N = nonatomic
     objc_property_attribute_t backingivar = { "V", "_hair"};//实例名称
@@ -230,8 +243,8 @@ static void *kDTActionHandlerTapBlockKey = &kDTActionHandlerTapBlockKey;
     class_addMethod(womenCls, @selector(setHair:), (IMP)imp_setHair, "v@:@");
     class_addMethod(womenCls, @selector(hair), (IMP)imp_hair, "@@:");
     
+    //在应用中注册由objc_allocateClassPair创建的类
     objc_registerClassPair(womenCls);//需要销毁。
-    
     unsigned int outCount = 0;
     Ivar *ivars = class_copyIvarList(womenCls, &outCount);
     for (int i = 0; i < outCount; i++) {

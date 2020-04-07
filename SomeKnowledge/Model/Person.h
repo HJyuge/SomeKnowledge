@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "NSObject+Test.h"
+#import <objc/runtime.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Person : NSObject
@@ -19,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)speak;
 - (void)run;
 - (void)sleep;
+- (void)eatMeat:(NSString *)type;
 @end
 
 

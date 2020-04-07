@@ -38,6 +38,10 @@ static NSString *cellIdentifier = @"cellIdentifier";
                      @"NaviToPushViewController",
                      @"RuntimeViewController",
                      @"TimerViewController",
+                     @"GCDViewController",
+                     @"NSOperationViewController",
+                     @"NSThreadViewController",
+                     @"FMDBViewController",
                      ] mutableCopy];
     _titleDataSource = [@[
                           @"日历",
@@ -48,6 +52,10 @@ static NSString *cellIdentifier = @"cellIdentifier";
                           @"跳转到别的TabbarItem",
                           @"Runtime",
                           @"定时器",
+                          @"GCD",
+                          @"NSOperation",
+                          @"NSThread",
+                          @"FMDB"
                           ] mutableCopy];
     
 //    [self.tableView registerClass:[MainListCell class] forCellReuseIdentifier:cellIdentifier];
