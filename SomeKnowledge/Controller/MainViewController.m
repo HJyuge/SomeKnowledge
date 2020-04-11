@@ -42,6 +42,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
                      @"NSOperationViewController",
                      @"NSThreadViewController",
                      @"FMDBViewController",
+                     @"BlockViewContoller"
                      ] mutableCopy];
     _titleDataSource = [@[
                           @"日历",
@@ -55,7 +56,8 @@ static NSString *cellIdentifier = @"cellIdentifier";
                           @"GCD",
                           @"NSOperation",
                           @"NSThread",
-                          @"FMDB"
+                          @"FMDB",
+                          @"Block"
                           ] mutableCopy];
     
 //    [self.tableView registerClass:[MainListCell class] forCellReuseIdentifier:cellIdentifier];
