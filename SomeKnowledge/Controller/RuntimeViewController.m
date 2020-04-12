@@ -54,9 +54,9 @@ static void *kDTActionHandlerTapBlockKey = &kDTActionHandlerTapBlockKey;
 //        NSLog(@"Associate tap gesture success.And User Tap callback.");
 //    }];
 //    [self testDicToModel];
-//    [self testMethodSwizzling];
+    [self testMethodSwizzling];
     
-    [self testMethodSwizzling2];
+//    [self testMethodSwizzling2];
 }
 
 - (void)testMethodSwizzling2 {

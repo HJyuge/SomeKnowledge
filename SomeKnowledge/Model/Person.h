@@ -10,8 +10,10 @@
 #import "NSObject+Test.h"
 #import <objc/runtime.h>
 NS_ASSUME_NONNULL_BEGIN
+typedef void(^Block2)(NSString *name);
 
 @interface Person : NSObject
+@property (nonatomic, copy)Block2 block2;
 @property(nonatomic,copy)NSString * name;
 @property(nonatomic,copy)NSString * nickname;
 @property(nonatomic,strong)NSNumber* height;
@@ -21,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)run;
 - (void)sleep;
 - (void)eatMeat:(NSString *)type;
+- (void)createPhone;
+- (void)createPhone:(Block2)phone;
 @end
 
 

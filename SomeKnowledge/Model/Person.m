@@ -89,4 +89,19 @@ NSString * dynamicName(id self,SEL _cmd){
     NSLog(@"%@ eat %@",[self class],type);
 }
 
+- (void)createPhone:(Block2)phone{
+    if (phone) {
+        NSLog(@"Person Phone block:%@",phone);
+        phone(@"Apple");
+        NSLog(@"After Invole Person Phone block:%@",phone);
+    }
+}
+- (void)createPhone {
+    if (self.block2){
+        NSLog(@"xiao mi Phone block:%@",self.block2);
+        self.block2(@"xiao mi phone");
+        NSLog(@"After Invole xiaomi Phone block:%@",self.block2);
+    }
+}
+
 @end

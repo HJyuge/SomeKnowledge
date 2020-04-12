@@ -42,7 +42,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
                      @"NSOperationViewController",
                      @"NSThreadViewController",
                      @"FMDBViewController",
-                     @"BlockViewContoller"
+                     @"BlockViewController"
                      ] mutableCopy];
     _titleDataSource = [@[
                           @"日历",
