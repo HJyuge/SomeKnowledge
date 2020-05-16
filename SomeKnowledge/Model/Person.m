@@ -73,6 +73,11 @@ NSString * dynamicName(id self,SEL _cmd){
         return [anInvocation invokeWithTarget:student];
     }
     return [super forwardInvocation:anInvocation];
+    /**
+     return value: {@} 0x0
+     target: {@} 0x60000339afa0
+     selector: {:} name
+     */
 }
 
 -(NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
@@ -83,6 +88,29 @@ NSString * dynamicName(id self,SEL _cmd){
     }
     NSLog(@"signature:%@",signature);
     return signature;
+    /**
+     number of arguments = 2
+     frame size = 224
+     is special struct return? NO
+     return value: -------- -------- -------- --------
+         type encoding (@) '@'
+         flags {isObject}
+         modifiers {}
+         frame {offset = 0, offset adjust = 0, size = 8, size adjust = 0}
+         memory {offset = 0, size = 8}
+     argument 0: -------- -------- -------- --------
+         type encoding (@) '@'
+         flags {isObject}
+         modifiers {}
+         frame {offset = 0, offset adjust = 0, size = 8, size adjust = 0}
+         memory {offset = 0, size = 8}
+     argument 1: -------- -------- -------- --------
+         type encoding (:) ':'
+         flags {}
+         modifiers {}
+         frame {offset = 8, offset adjust = 0, size = 8, size adjust = 0}
+         memory {offset = 0, size = 8}
+     */
 }
 
 - (void)eatMeat:(NSString *)type{

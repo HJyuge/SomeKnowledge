@@ -42,7 +42,7 @@ static void *kDTActionHandlerTapBlockKey = &kDTActionHandlerTapBlockKey;
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    [self performSelector:@selector(testMethodResolve) withObject:nil afterDelay:1];
-//    [self testMessageForwardingAndResolutionAndMetaClassCloseCycle];
+    [self testMessageForwardingAndResolutionAndMetaClassCloseCycle];
 //    [self testClassIsaMetaClass];
 //    [self testMessageForwarding];
 //    [self testClassAndInstanceProperty];

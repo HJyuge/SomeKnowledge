@@ -36,7 +36,11 @@
     // 调用方法
     [invocation invoke];
     // 获取返回值
-    id returnValue = nil;
+    /**
+     getReturnValue 内部生产的对象，它将自己管理其生命周期，而前面不加上述修饰符的话会导致该对象在方法结束前有编译器添加的release一次 导致过度释放。
+     个人理解：根据c语言的取地址&获取值，getReturnValue函数结束后会释放临时变量。然后returnValue也是函数中的临时变量也会在作用域结束的时候释放。所以不加 __autoreleasing 会导致 returnValue的值被释放两次。
+     */
+    __autoreleasing id returnValue = nil;
     if (signature.methodReturnLength) { // 有返回值类型，才去获得返回值
         [invocation getReturnValue:&returnValue];
     }

@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "MainListCell.h"
+#import "NSObject+Test.h"
 
 static NSString *cellIdentifier = @"cellIdentifier";
 
@@ -20,7 +21,10 @@ static NSString *cellIdentifier = @"cellIdentifier";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    UIColor *backgroundColor = [UIColor whiteColor];
+//    backgroundColor = [backgroundColor colorWithAlphaComponent:0.8]
+    self.view.backgroundColor = backgroundColor;
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
